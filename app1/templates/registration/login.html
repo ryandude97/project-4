@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+
+{% block navbar %}
+    {% include '../app1/pages/components/DASHBOARD_navbar.html' %}
+{% endblock navbar %}
+
+
+{% block loginform %}
+<div class="container container-sm">
+    <img src="https://media.giphy.com/media/ORUfxy9ElFbPIi2K1K/giphy.gif" style="width: 10rem; height: auto;">
+    <form method="post" class="form-group">
+        {% csrf_token %}
+        {{form|crispy}}
+        <button type="submit" class="btn btn-outline-dark">Login</button> |
+        <a href="{% url 'register' %}">Register</a>
+    </form>
+</div>
+
+{% endblock loginform %}
+
+{% endblock %}

@@ -1,0 +1,198 @@
+{% extends "base.html" %} 
+
+{% block content %} 
+
+{% if user.is_authenticated %} 
+
+<!-- Dashboard NavBar -->
+{% block navbar %} 
+{% include './components/DASHBOARD_navbar.html' %} 
+{% endblock navbar %}
+
+<div class="container">
+  <!-- Portfolio Table -->
+  <div class="table-responsive-sm">
+  <table class="table table-bordered table-sm">
+    <thead class="thead-light">
+      <tr>
+        <th scope="col" class="h4">Portfolio Total</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr>
+        <td class="h1 table-light">
+          ${{update.portfolio_balance}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+<!-- BTC/USD Table -->
+<div class="table-responsive-sm">
+  <table class="table table-sm">
+    <thead class="thead-light text-center">
+      <tr class="table-bordered">
+        <th scope="col">BTC ({{update.btc_percentage}}%) </th>
+        <th scope="col">USD ({{update.usd_percentage}}%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class='h2 text-center table-light table-bordered'>
+          {{update.symbol.DISPLAY.BTC.USD.FROMSYMBOL}} {{update.bitcoin_balance}}
+        </td>
+        <td class="h1 text-center table-light table-bordered" rowspan="2">
+            ${{update.user_usd_balance}}
+        </td>
+      </tr>
+      <tr>
+        <td class='h4 text-right'>
+          ${{update.user_btc_balance}}*
+      </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+    <!-- BTC API Table -->
+    <div class="table-responsive-sm">
+      <table class="table table-sm">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col" class="h5 text-center"> BTC Price</th>
+            <th scope="col">24hr High</th>
+            <th scope="col">24hr Low</th>
+          </tr>
+        </thead>
+        <tbody class="text-left">
+          <tr>
+            <td class="h2 text-center table-light table-bordered">${{update.btc_price}}*</td>
+            {% for key,value in update.symbol.DISPLAY.items %}
+            <td>{{value.USD.HIGHDAY}}</td>
+            <td>{{value.USD.LOWDAY}}</td>
+            {% endfor %}
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- BUY/SELL Interface -->
+  <div class="container">
+    <form class="form-inline" method="POST" action="{% url 'dashboard' %}" style='display:flex; justify-content:center'>
+      <div class="form-group mx-sm-3 mb-2">
+        {% csrf_token %}
+        <div class="input-group input-group-sm mb-3">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="TRADE_BTC" checked="checked">
+            <label class="form-check-label" for="inlineRadio1">Trade BTC</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="TRADE_USD">
+            <label class="form-check-label" for="inlineRadio2">Trade USD*</label>
+          </div>
+          <div class="input-group-prepend">
+            <select name="BUY_SELL" class="buy-sell form-control form-control-sm">
+              <option value="BUY">BUY</option>
+              <option value="SELL">SELL</option>
+            </select>
+          </div>
+          <input
+          class="form-control form-control-sm"
+          type="number" 
+          min="0"
+          step="0.01" 
+          required="required"
+          placeholder="Trade Amount..."
+          aria-label="Search"
+          name="BUY_BTC"
+        />
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-outline-success btn-sm">
+            Submit
+          </button>
+        </div>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Error -->
+  <div>
+    <h5 style="color:red;">
+      {{error}}
+    </h5>
+  </div>
+    
+  <!-- Portfolio Table -->
+<div class="table-responsive-sm">
+  <table class="table table-sm">
+    <thead class="thead-light text-center">
+      <tr>
+        <th scope="col">BTC ({{update.btc_percentage}}%) </th>
+        <th scope="col">USD ({{update.usd_percentage}}%)</th>
+      </tr>
+    </thead>
+    <tbody class="text-center">
+      <tr class="table-bordered">
+        <td class='h4 text-center'>
+          {{update.symbol.DISPLAY.BTC.USD.FROMSYMBOL}} {{update.bitcoin_balance}}
+        </td>
+        <td class="text-center h4">
+            ${{update.user_usd_balance}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <!-- Transaction History Table (Foreign Key) -->
+  <div class="container-sm">
+  <div class="table-responsive-sm">
+    <table class="table table-hover table-sm">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">{{user}}</th>
+          <th scope="col">BTC Price</th>
+          <th scope="col">Trade</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      {% for transactions in update.transaction.all %}
+      <tbody>
+        <tr>
+          <td>
+            {{transactions.transaction_date}}
+          </td>
+          <td>
+            ${{transactions.transaction_usd_price}}
+          </td>
+          <td>
+            {{transactions.transaction_type}}
+          </td>
+          <td>
+            {{transactions.transaction_btc_quantity}}
+          </td>
+          <td>
+            ${{transactions.transaction_total_usd_price}}
+          </td>
+        </tr>
+      </tbody>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+
+{% else %}
+
+<!-- User Authentication Message -->
+<div class="container">
+  {% block login_message %}
+  <p>Please <a href="{% url 'login' %}" class="">Login </a>to view this content</p>
+  {% endblock login_message %}
+</div>
+
+{% endif %}
+
+{% endblock %}
