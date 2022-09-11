@@ -88,11 +88,11 @@ This app is better than CoinBase. The color schema and obvious bootstrap usage i
 
 **8.** Created charts with python plotly and plotly.js to display data from the external APIs and from the Django database.
 
-**9.** Created a registration page, login/logout page and user authentication system with Django Admin, Django Forms, django-crispy-forms, Django Templates and Bootstrap.
+**9.** Created reg form with django-crispy-forms. 
 
-**10.** Created an Account model that credits the user $50,000 USD when the new user logs in for the first time and updates the Bitcoin and USD balances for the authenticated user when trades are placed from the user's account.
+**10.** Created account designs with $50,000.
 
-**11.** Created a Transactions model that logs the transacitions history of the authenticated user when trades are placed.  
+**11.** Created a Transactions model that logs the transactions history of the authenticated user when trades are placed.  
 
 **12.** Added a Reset button to allow the authenticated user to reset their Account balances and Transactions histories to their defaults.
 
