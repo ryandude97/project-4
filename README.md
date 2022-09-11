@@ -90,17 +90,13 @@ This app is better than CoinBase. The color schema and obvious bootstrap usage i
 
 **9.** Created reg form with django-crispy-forms. 
 
-**10.** Created account designs with $50,000.
+**10.** Created account framework with $50,000.
 
 **11.** Created a Transactions model that logs the transactions history of the authenticated user when trades are placed.  
 
 **12.** Added a Reset button to allow the authenticated user to reset their Account balances and Transactions histories to their defaults.
 
-**13.** Created a trading interface that allows the authenticated user to place BUY/SELL trades in either BTC or USD quantites, displays the current Bitcoin exchange rate, 24 hour and low price, updates the Account balances and displays the transaction history when trades are placed.
-
 **14.** Created an account interface that allows the authenticated user to track their portfolio performance by displaying account balances and chart data.
 
-**15.** Created a Quote interface that allows the user to track daily crypto currency prices and displays a time series chart.
-
-**16.** Created a News page that pulls recent news stories from an API request.
+**15** Created realtime quotes and from rest api. 
 
