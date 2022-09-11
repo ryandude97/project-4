@@ -76,16 +76,15 @@ This app is better than CoinBase. The color schema and obvious bootstrap usage i
 
 **2.** Set up virtual environment locally, created a new Django project and app.
 
-**3.** Added Templates and Static Files folder structures to the app.
+**3.** Developed static files and overall file structure, python.
 
-**4.** Once the basic skeleton of the site was functional I deployed the site to Heroku via Heroku CLI. Heroku Django deployment documentation can be found [here](https://devcenter.heroku.com/categories/python-support)
-
+**4.** Decided to use a pre-existing sqlite3 db crypto. 
 
 **5.** Added miniaturized [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/download/) CSS and JS files, miniaturized [jQuery](https://jquery.com/download/), miniaturized [Plotly.js](https://plot.ly/javascript/getting-started/) charting library to the project static files folder.
 
 **6.** pip installed python pandas, pandas-datareader, dash, django-plotly-dash and django-crispy-forms to the virtual envrionment.
 
-**7.** Wrote a series of python API requests to retrieve CSV and JSON data.
+**7.** Made python API requests to retrieve CSV and JSON data.
 
 **8.** Created charts with python plotly and plotly.js to display data from the external APIs and from the Django database.
 
