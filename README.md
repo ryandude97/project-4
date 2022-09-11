@@ -3,23 +3,19 @@
 *A full description of the project scope criteria can be found [here](https://sites.google.com/view/reference-page/project-4).*
 
 ---
-**Name:  Matt Heerspink**  
-**Contact: mheerspink75@gmail.com**  
-**Organization: Texas A&M University Kingsville**  
-**Program:  Full Stack Web Development Bootcamp**  
-**Project:  Python Django Finance Application**
+**Name:  Ryan Stroemel**  
+**Contact: rstroemel@gmail.com**  
 
 ---
+ 
 
-## Abstract:  
-
-Mach Trade is a cryptocurrency trading application that allows individual users to perform hypothetical trading of Bitcoin for USD.  Mach Trade uses external API requests from [Alphavantage](https://www.alphavantage.co/documentation/) and [Cryptocompare](https://min-api.cryptocompare.com/documentation) APIs to pull real-time data for Bitcoin USD exchange rates, time series performance history data and news stories which may impact the price of Bitcoin. All user BUY/SELL transactions, for hypothetical BTC/USD, are logged to the Django database. Portfolio performance is tracked through a combination of database queries and API data. Individual users are credited with $50,000 USD when a new user account is created. Portfolio balances and transaction histories can be reset from the Account page. 
+YOUTRADE is a cryptocurrency trading application that allows individual users to perform hypothetical trading of Bitcoin for USD. YOUTRADE uses external API requests from [Alphavantage](https://www.alphavantage.co/documentation/) and [Cryptocompare](https://min-api.cryptocompare.com/documentation) APIs to pull real-time data for Bitcoin USD exchange rates, time series performance history data and news stories which may impact the price of Bitcoin. 
 
 ---
 
 **Install instructions**
 
-**1.**  Clone the repoistory
+**1.**  Clone the repository
 ```
 git clone https://github.com/mheerspink75/Django-Plotly-Dash.git
 ```
