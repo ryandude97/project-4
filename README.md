@@ -17,7 +17,7 @@ YOUTRADE is a cryptocurrency trading application that allows individual users to
 
 **1.**  Clone the repository
 ```
-git clone https://github.com/mheerspink75/Django-Plotly-Dash.git
+git clone https://github.com/ryandude97/project-4.git
 ```
 **2.** Create a virtual environment in the cloned project directory
 ```
@@ -25,7 +25,7 @@ virtualenv django_project
 ```
 **3.**  Activate the virtual environment
 ```
-source django_project/scripts/activate
+source project4/bin/activate 
 ```
 **4.**  Install the dependencies from requirements.txt
 ```
@@ -33,20 +33,20 @@ pip install -r requirements.txt
 ```
 **5.**  Collect the static files
 ```
-py manage.py collectstatic
+python3 manage.py collectstatic
 ```
 **6.**  Migrate the Database
 ```
-py manage.py makemigrations app1
-py manage.py migrate
+python3 manage.py makemigrations app1
+python3 manage.py migrate
 ```
 **7.** Create a user account and log in
 ```
-py manage.py createsuperuser
+python3 manage.py createsuperuser
 ```
 **8.** Run the dev server
 ```
-py manage.py runserver
+python3 manage.py runserver
 ```
 dev server address:  http://127.0.0.1:8000/
 
@@ -56,23 +56,23 @@ dev server address:  http://127.0.0.1:8000/
 
 ### User Stories:
 
-**1.** Cryptocurrency exchange rates are unpredicitable. I like the idea of making money trading Bitcoin but I don't have any experience trading Bitcoin. And, I don't want to lose money in the process. I want an application that allows me to perform hypothetical trades so I don't risk losing money while I'm getting started with cryptocurrency trading.
+**1.** 
+I always buy the dip on crypto exchanges. Bitcoin for life. 
+-Jason
 
--*Mark*
+**2.** 
+I over-leverage my accounts all the time, so this $50,000 will be perfect to blow on crypto. 
+-Julian
 
-**2.** I trade Bitcoin sometimes but I don't spend a lot of money on trading Bitcoin. I always wondered if I could make a million dollars trading Bitcoin. If I had $50,000 dollars to spend I would try to make a million on Bitcoin. I want an application that allows me to test my trading stratagies with out the risk of having to borrow the money.
-
--*Sarah* 
-
-**3.** I'm a student. I don't have money to waist on Bitcoin right now.  I just want to know how to set up a Django 3 project, make finance API queries with python, display the data on some nice charts, get the database working and deploy the Django app that I'm working on. I might buy some Bitcoin someday.
- 
--*Joe*  
+**3.** 
+This app is better than CoinBase. The color schema and obvious bootstrap usage is amazing!
+-Diavolo 
 
 ---
 
-### Development Phase:
+-- Development Phase:
 
-**1.** Created Github repository [Django-Plotly-Dash](https://github.com/mheerspink75/Django-Plotly-Dash)
+**1.** Created Github repository [Project4](https://github.com/ryandude97/project-4)
 
 **2.** Set up virtual environment locally, created a new Django project and app.
 
@@ -80,29 +80,28 @@ dev server address:  http://127.0.0.1:8000/
 
 **4.** Once the basic skeleton of the site was functional I deployed the site to Heroku via Heroku CLI. Heroku Django deployment documentation can be found [here](https://devcenter.heroku.com/categories/python-support)
 
-**5.** I created another Github repository to document the deployment process [here](https://github.com/mheerspink75/herokudjangoapp-deployheroku)
 
-**6.** Added miniaturized [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/download/) CSS and JS files, miniaturized [jQuery](https://jquery.com/download/), miniaturized [Plotly.js](https://plot.ly/javascript/getting-started/) charting library to the project static files folder.
+**5.** Added miniaturized [Bootstrap](https://getbootstrap.com/docs/4.4/getting-started/download/) CSS and JS files, miniaturized [jQuery](https://jquery.com/download/), miniaturized [Plotly.js](https://plot.ly/javascript/getting-started/) charting library to the project static files folder.
 
-**7.** pip installed python pandas, pandas-datareader, dash, django-plotly-dash and django-crispy-forms to the virtual envrionment.
+**6.** pip installed python pandas, pandas-datareader, dash, django-plotly-dash and django-crispy-forms to the virtual envrionment.
 
-**8.** Wrote a series of python API requests to retrieve CSV and JSON data.
+**7.** Wrote a series of python API requests to retrieve CSV and JSON data.
 
-**9.** Created charts with python plotly and plotly.js to display data from the external APIs and from the Django database.
+**8.** Created charts with python plotly and plotly.js to display data from the external APIs and from the Django database.
 
-**10.** Created a registration page, login/logout page and user authentication system with Django Admin, Django Forms, django-crispy-forms, Django Templates and Bootstrap.
+**9.** Created a registration page, login/logout page and user authentication system with Django Admin, Django Forms, django-crispy-forms, Django Templates and Bootstrap.
 
-**11.** Created an Account model that credits the user $50,000 USD when the new user logs in for the first time and updates the Bitcoin and USD balances for the authenticated user when trades are placed from the user's account.
+**10.** Created an Account model that credits the user $50,000 USD when the new user logs in for the first time and updates the Bitcoin and USD balances for the authenticated user when trades are placed from the user's account.
 
-**12.** Created a Transactions model that logs the transacitions history of the authenticated user when trades are placed.  
+**11.** Created a Transactions model that logs the transacitions history of the authenticated user when trades are placed.  
 
-**13.** Added a Reset button to allow the authenticated user to reset their Account balances and Transactions histories to their defaults.
+**12.** Added a Reset button to allow the authenticated user to reset their Account balances and Transactions histories to their defaults.
 
-**14.** Created a trading interface that allows the authenticated user to place BUY/SELL trades in either BTC or USD quantites, displays the current Bitcoin exchange rate, 24 hour and low price, updates the Account balances and displays the transaction history when trades are placed.
+**13.** Created a trading interface that allows the authenticated user to place BUY/SELL trades in either BTC or USD quantites, displays the current Bitcoin exchange rate, 24 hour and low price, updates the Account balances and displays the transaction history when trades are placed.
 
-**15.** Created an account interface that allows the authenticated user to track their portfolio performance by displaying account balances and chart data.
+**14.** Created an account interface that allows the authenticated user to track their portfolio performance by displaying account balances and chart data.
 
-**16.** Created a Quote interface that allows the user to track daily crypto currency prices and displays a time series chart.
+**15.** Created a Quote interface that allows the user to track daily crypto currency prices and displays a time series chart.
 
-**17.** Created a News page that pulls recent news stories from an API request.
+**16.** Created a News page that pulls recent news stories from an API request.
 

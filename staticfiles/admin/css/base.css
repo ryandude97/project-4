@@ -25,12 +25,12 @@
   --breadcrumbs-link-fg: var(--body-bg);
   --breadcrumbs-bg: var(--primary);
 
-  --link-fg: #000000;
-  --link-hover-color: rgb(0, 0, 0);
-  --link-selected-fg: #000000;
+  --link-fg: #447e9b;
+  --link-hover-color: #036;
+  --link-selected-fg: #5b80b2;
 
   --hairline-color: #e8e8e8;
-  --border-color: rgb(185, 142, 142);
+  --border-color: #ccc;
 
   --error-fg: #ba2121;
 
@@ -59,7 +59,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary: #20729c;
+    --primary: #264b5d;
     --primary-fg: #eee;
 
     --body-fg: #eeeeee;
@@ -224,7 +224,7 @@ fieldset {
 
 blockquote {
     font-size: 11px;
-    color: rgb(168, 168, 168);
+    color: #777;
     margin-left: 2px;
     padding-left: 10px;
     border-left: 5px solid #ddd;
@@ -244,7 +244,7 @@ pre.literal-block {
 }
 
 code strong {
-    color: rgb(255, 85, 0);
+    color: #930;
 }
 
 hr {

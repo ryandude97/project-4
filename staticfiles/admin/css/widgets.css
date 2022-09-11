@@ -1,13 +1,13 @@
 /* SELECTOR (FILTER INTERFACE) */
 
 .selector {
-    width: 750px;
+    width: 800px;
     float: left;
 }
 
 .selector select {
     width: 380px;
-    height: 17.9em;
+    height: 17.2em;
 }
 
 .selector-available, .selector-chosen {
